@@ -1,12 +1,12 @@
 {
   "name": "node-deploy-server",
   "description": "Web service for deploy and run node.js applications",
-  "version": "0.2.0",
+  "version": "0.2.45",
   "author": "Gromozdov Andrey Alexandrovich",
   "main": "../lib/server",
   "repository": {
     "type": "git",
-    "url": "git://github.com/andygrom/node-deploy-server.git"
+    "url": "git://github.com/Nikolay89/node-deploy-server.git"
   },
   "licenses": [
     {
@@ -52,7 +52,7 @@
   "bin": {
     "node-deploy-server": "./bin/node-deploy-server"
   },
-  "homepage": "https://github.com/AndyGrom/node-deploy-server",
+  "homepage": "https://github.com/Nikolay89/node-deploy-server",
   "scripts": {
     "install": "node ./scripts/install.js"
   }
