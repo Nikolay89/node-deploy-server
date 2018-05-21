@@ -1,0 +1,11 @@
+*.njsproj
+*.sln
+*.suo
+*.bak
+.idea
+nodehosting.json
+publish.cmd
+unpublish.cmd
+lib/daemon/
+app.key
+app.cert
