@@ -9,7 +9,7 @@ var path = require('path');
 
 var platforms = {
     win32 : 'win32',
-	win64 : 'win64'
+	win64 : 'win64',
     linux : 'linux',
     unknown: 'unknown'
 }

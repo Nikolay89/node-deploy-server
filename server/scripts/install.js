@@ -14,6 +14,9 @@ var platform = require('./common');
 if (platform.isWin32 || platform.isWin64) {
     console.log('install windows service...');
     Service = require('../lib/service/windows').Service;
+	//Service = require('node-windows').Service;
+	
+	console.log('install windows service ok');
 }
 
 if (platform.isLinux) {
@@ -31,9 +34,29 @@ var svc = new Service({
     script: './lib/server.js'
 });
 
+// Listen for the "install" event, which indicates the
+// process is available as a service.
 svc.on('install',function(){
-    console.log('service installed.');
+  svc.start();
 });
+
+svc.on('start',function(){
+  console.log(svc.name+' started!');
+});
+
+//svc.on('uninstall',function(){
+//  console.log('Uninstall complete.');
+//  console.log('The service exists: ',svc.exists);
+//});
+// Just in case this file is run twice.
+svc.on('alreadyinstalled',function(){
+	//svc.uninstall();
+  console.log('This service is already installed.');
+});
+
+// Listen for the "start" event and let us know when the
+// process has actually started working.
+
 
 var installConfigTemplate = function() {
     console.log('Target configuration: ' + platform.configFile);
